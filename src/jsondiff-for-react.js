@@ -1,13 +1,9 @@
 /**
  * Created by guoguangyu on 2016/10/25.
  */
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
-import jsondiffpatch from 'jsondiffpatch/src/main';
-import formatters from 'jsondiffpatch/src/main-formatters';
-
-require('jsondiffpatch/public/formatters-styles/html.css');
-require('jsondiffpatch/public/formatters-styles/annotated.css');
+import { diff, formatters } from 'jsondiffpatch';
 
 class JsonDiffReact extends Component {
   static propTypes = {
@@ -19,7 +15,7 @@ class JsonDiffReact extends Component {
   };
   render() {
     const {right, left, show = true, annotated = false, tips} = this.props;
-    const delta = jsondiffpatch.diff(left, right);
+    const delta = diff(left, right);
     const html = annotated ?
       formatters.annotated.format(delta) : formatters.html.format(delta, left);
     show ? formatters.html.showUnchanged() : formatters.html.hideUnchanged();
