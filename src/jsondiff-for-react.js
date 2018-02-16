@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import jsondiffpatch from 'jsondiffpatch/src/main';
 import formatters from 'jsondiffpatch/src/main-formatters';
 
-require('jsondiffpatch/public/formatters-styles/html.css');
-require('jsondiffpatch/public/formatters-styles/annotated.css');
+//require('jsondiffpatch/public/formatters-styles/html.css');
+//require('jsondiffpatch/public/formatters-styles/annotated.css');
 
 class JsonDiffReact extends Component {
   static propTypes = {
